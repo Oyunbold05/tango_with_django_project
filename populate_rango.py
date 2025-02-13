@@ -15,37 +15,29 @@ def populate():
 
     python_pages = [
         {'title': 'Official Python Tutorial',
-        'url':'http://docs.python.org/3/tutorial/',
-        'views': 32},
+        'url':'http://docs.python.org/3/tutorial/', 'views': 32},
         {'title':'How to Think like a Computer Scientist',
-        'url':'http://www.greenteapress.com/thinkpython/',
-        'views': 16},
+        'url':'http://www.greenteapress.com/thinkpython/', 'views': 16},
         {'title':'Learn Python in 10 Minutes',
-        'url':'http://www.korokithakis.net/tutorials/python/',
-        'views': 8} ]
+        'url':'http://www.korokithakis.net/tutorials/python/', 'views': 8}]
 
     django_pages = [
         {'title':'Official Django Tutorial',
-        'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/',
-        'views': 64},
+        'url':'https://docs.djangoproject.com/en/2.1/intro/tutorial01/', 'views': 64},
         {'title':'Django Rocks',
-        'url':'http://www.djangorocks.com/',
-        'views': 32},
+        'url':'http://www.djangorocks.com/', 'views': 32},
         {'title':'How to Tango with Django',
-        'url':'http://www.tangowithdjango.com/',
-         'views': 16} ]
+        'url':'http://www.tangowithdjango.com/', 'views': 16}]
 
     other_pages = [
         {'title':'Bottle',
-        'url':'http://bottlepy.org/docs/dev/',
-        'views': 8},
+        'url':'http://bottlepy.org/docs/dev/', 'views': 8},
         {'title':'Flask',
-        'url':'http://flask.pocoo.org',
-        'views': 4} ]
+        'url':'http://flask.pocoo.org', 'views': 4}]
 
     cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
         'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
-        'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16} }
+        'Other Frameworks': {'pages': other_pages, 'views': 32, 'likes': 16}}
 
 # If you want to add more categories or pages,
 # add them to the dictionaries above.
@@ -67,7 +59,7 @@ def populate():
             print(f'- {c}: {p}')
 
 def add_page(cat, title, url, views=0):
-    p = Page.objects.get_or_create(category=cat, title=title)[0]
+    p = Page.objects.get_or_create(category=cat, title=title, )[0]
     p.url=url
     p.views=views
     p.save()
